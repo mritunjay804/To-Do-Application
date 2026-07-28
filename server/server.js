@@ -1,8 +1,28 @@
+// const client = new MongoClient(process.env.MONGO_URL);
 const express = require("express");
 const { MongoClient, ObjectId } = require("mongodb");
 const cors = require("cors");
 
 const connectionString = "mongodb://127.0.0.1:27017";
+// const express = require("express");
+// const { MongoClient, ObjectId } = require("mongodb");
+// const cors = require("cors");
+// require("dotenv").config();
+
+// const app = express();
+
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(cors());
+
+// const client = new MongoClient(process.env.MONGO_URL);
+
+// let database;
+
+
+// const client = await MongoClient.connect(connectionString);
+// const database = client.db("to_do_application");
+
 
 const app = express();
 
@@ -358,3 +378,23 @@ app.put("/editPendingAppointment/:id", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
+
+
+// async function connectDB() {
+//   try {
+//     await client.connect();
+//     database = client.db("to_do_application");
+//     console.log("✅ MongoDB Connected");
+
+//     const PORT = process.env.PORT || 3000;
+
+//     app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   } catch (err) {
+//     console.error("MongoDB Connection Error:", err);
+//     process.exit(1);
+//   }
+// }
+
+// connectDB();
